@@ -41,8 +41,8 @@ visionLib={modPath=minetest.get_modpath("vision_lib"), worldpath=minetest.get_wo
 	File={},
 }
 
-function visionLib.File.LoadModule(filename)
-	local filepath=visionLib.modPath
+function visionLib.File.LoadModule(filename, fp)
+	local filepath=fp or visionLib.modPath
 	filename=filename..".lua"
 	dofile(filepath.."/res/"..filename)
 end
