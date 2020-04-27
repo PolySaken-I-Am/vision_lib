@@ -48,5 +48,6 @@ function visionLib.File.LoadModule(filename, fp)
 end
 
 visionLib.File.LoadModule("common")
+visionLib.File.LoadModule("sound")
 visionLib.File.LoadModule("material")
 visionLib.File.LoadModule("schem")

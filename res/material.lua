@@ -378,13 +378,15 @@ function visionLib.Material.create(name, desc, ish, color)
 			tiles={"visionlib_gemblock.png^[colorize:#"..color},
 			is_ground_content=false,
 			groups={cracky=2, ["block_"..name]=1, [name]=1, gem_block=1},
+			sounds=visionLib.Sound.Glass(),
 		})
 		
 		minetest.register_node(":vision_lib:"..name.."_dust_block", {
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 	elseif ish=="powder" then
 		minetest.register_craftitem(":vision_lib:"..name.."_dust", {
@@ -397,7 +399,8 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 	elseif ish=="brittle" then
 		minetest.register_craftitem(":vision_lib:"..name.."_ingot", {
@@ -422,7 +425,8 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_plate", {
@@ -442,6 +446,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			tiles={"visionlib_metalblock.png^[colorize:#"..color},
 			is_ground_content=false,
 			groups={cracky=2, metal=1, [name]=1, ["block_"..name]=1, metal_block=1},
+			sounds=visionLib.Sound.Metal(),
 		})
 
 	elseif ish=="hard" then
@@ -467,7 +472,8 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_plate", {
@@ -493,6 +499,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			tiles={"visionlib_metalblock.png^[colorize:#"..color},
 			is_ground_content=false,
 			groups={cracky=2, metal=1, [name]=1, ["block_"..name]=1, metal_block=1},
+			sounds=visionLib.Sound.Metal(),
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_wire", {
@@ -523,7 +530,8 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_sheet", {
@@ -567,7 +575,8 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1},
+			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			sounds=visionLib.Sound.Sand(),
 		})
 
 		minetest.register_craftitem(":vision_lib:"..name.."_rod", {
@@ -581,6 +590,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			tiles={"visionlib_metalblock.png^[colorize:#"..color},
 			is_ground_content=false,
 			groups={cracky=2, metal=1, [name]=1, ["block_"..name]=1, metal_block=1},
+			sounds=visionLib.Sound.Metal(),
 		})
 		
 	end
@@ -598,3 +608,5 @@ end
 if minetest.get_modpath("basic_materials") then
 visionLib.Material.require({"brass"})
 end
+
+visionLib.Material.require({"brass", "zweinium"})
