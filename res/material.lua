@@ -385,7 +385,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			groups={crumbly=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
 			sounds=visionLib.Sound.Sand(),
 		})
 	elseif ish=="powder" then
@@ -425,7 +425,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			groups={crumbly=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
 			sounds=visionLib.Sound.Sand(),
 		})
 		
@@ -472,7 +472,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			groups={crumbly=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
 			sounds=visionLib.Sound.Sand(),
 		})
 		
@@ -509,13 +509,13 @@ function visionLib.Material.create(name, desc, ish, color)
 		})
 	elseif ish=="soft" then
 		minetest.register_craftitem(":vision_lib:"..name.."_ingot", {
-			description = desc.." Ingot",
+			description = desc.." Bar",
 			inventory_image = "visionlib_ingot.png^[colorize:#"..color,
 			groups={["ingot_"..name]=1, [name]=1, ingot=1, metal=1},
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_nugget", {
-			description = desc.." Chip",
+			description = desc.." Chunk",
 			inventory_image = "visionlib_nugget.png^[colorize:#"..color,
 			groups={["nugget_"..name]=1, [name]=1, nugget=1, metal=1},
 		})
@@ -530,7 +530,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			groups={crumbly=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
 			sounds=visionLib.Sound.Sand(),
 		})
 		
@@ -541,16 +541,17 @@ function visionLib.Material.create(name, desc, ish, color)
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_wire", {
-			description = desc.." Wire",
+			description = desc.." Filament",
 			inventory_image = "visionlib_wire.png^[colorize:#"..color,
 			groups={["wire_"..name]=1, [name]=1, wire=1, metal=1},
 		})
 
 		minetest.register_node(":vision_lib:"..name.."_block", {
 			description=desc.." Block",
-			tiles={"visionlib_metalblock.png^[colorize:#"..color},
+			tiles={"visionlib_softerblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, metal=1, [name]=1, ["block_"..name]=1, metal_block=1},
+			groups={cracky=3, metal=1, [name]=1, ["block_"..name]=1, metal_block=1},
+			sounds=visionLib.Sound.Plastic(),
 		})
 	elseif ish=="strange" then
 		minetest.register_craftitem(":vision_lib:"..name.."_ingot", {
@@ -575,7 +576,7 @@ function visionLib.Material.create(name, desc, ish, color)
 			description=desc.." Dust Block",
 			tiles={"visionlib_dustblock.png^[colorize:#"..color},
 			is_ground_content=false,
-			groups={cracky=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
+			groups={crumbly=2, ["dust_block_"..name]=1, [name]=1, dust_block=1, falling_node=1},
 			sounds=visionLib.Sound.Sand(),
 		})
 
@@ -609,4 +610,4 @@ if minetest.get_modpath("basic_materials") then
 visionLib.Material.require({"brass"})
 end
 
-visionLib.Material.require({"brass", "zweinium"})
+visionLib.Material.require({"lead", "zweinium", "brass"})
