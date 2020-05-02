@@ -5,83 +5,78 @@ visionLib.Materials={}
 
 visionLib._sMaterials={
 	["iron"]=function()
+		visionLib.Material.create("iron", "Wrought Iron", "hard", "b0b0b0a0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:steel_ingot", {description="Wrought Iron Ingot", groups={ingot_iron=1, ingot=1, iron=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:steelblock", {description="Wrought Iron Block", groups={block_iron=1, iron=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_iron", {groups={ore_iron=1, iron=1}})
 			visionLib.Common.SmartOverrideItem("default:iron_lump", {groups={ore_iron=1, lump_iron=1, iron=1}})
-			minetest.register_alias("vision_lib:iron_ingot", "default:steel_ingot")
-			minetest.register_alias("vision_lib:iron_block", "default:steelblock")
+			minetest.register_alias_force("vision_lib:iron_ingot", "default:steel_ingot")
+			minetest.register_alias_force("vision_lib:iron_block", "default:steelblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:wrought_iron_dust", {groups={dust_iron=1,iron=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:iron_dust", "technic:wrought_iron_dust")
+				minetest.register_alias_force("vision_lib:iron_dust", "technic:wrought_iron_dust")
 			end
-		else
-			visionLib.Material.create("iron", "Wrought Iron", "hard", "b0b0b0a0")
 		end
 	end,
 	["copper"]=function()
+		visionLib.Material.create("copper", "Copper", "soft", "ffc60050")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:copper_ingot", {groups={ingot_copper=1, ingot=1, copper=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:copperblock", {groups={block_copper=1, copper=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_copper", {groups={ore_copper=1, copper=1}})
 			visionLib.Common.SmartOverrideItem("default:copper_lump", {groups={ore_copper=1, lump_copper=1,copper=1}})
-			minetest.register_alias("vision_lib:copper_ingot", "default:copper_ingot")
-			minetest.register_alias("vision_lib:copper_block", "default:copperblock")
+			minetest.register_alias_force("vision_lib:copper_ingot", "default:copper_ingot")
+			minetest.register_alias_force("vision_lib:copper_block", "default:copperblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:copper_dust", {groups={dust_copper=1,copper=1,dust=1, metal=1}})
 				visionLib.Common.SmartOverrideItem("technic:copper_plate", {groups={plate_copper=1,copper=1,plate=1, metal=1}})
-				minetest.register_alias("vision_lib:copper_dust", "technic:copper_dust")
-				minetest.register_alias("vision_lib:copper_plate", "technic:copper_plate")
+				minetest.register_alias_force("vision_lib:copper_dust", "technic:copper_dust")
+				minetest.register_alias_force("vision_lib:copper_plate", "technic:copper_plate")
 			end
-		else
-			visionLib.Material.create("copper", "Copper", "soft", "ffc60050")
 		end
 	end,
 	["tin"]=function()
+		visionLib.Material.create("tin", "Tin", "hard", "b0b0b850")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:tin_ingot", {groups={ingot_tin=1, ingot=1, tin=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:tinblock", {groups={block_tin=1, tin=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_tin", {groups={ore_tin=1, tin=1}})
 			visionLib.Common.SmartOverrideItem("default:tin_lump", {groups={ore_tin=1, lump_tin=1,tin=1}})
-			minetest.register_alias("vision_lib:tin_ingot", "default:tin_ingot")
-			minetest.register_alias("vision_lib:tin_block", "default:tinblock")
+			minetest.register_alias_force("vision_lib:tin_ingot", "default:tin_ingot")
+			minetest.register_alias_force("vision_lib:tin_block", "default:tinblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:tin_dust", {groups={dust_tin=1,tin=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:tin_dust", "technic:tin_dust")
+				minetest.register_alias_force("vision_lib:tin_dust", "technic:tin_dust")
 			end
-		else
-			visionLib.Material.create("tin", "Tin", "hard", "bobob850")
 		end
 	end,
 	["gold"]=function()
+		visionLib.Material.create("gold", "Gold", "soft", "ffd90050")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:gold_ingot", {groups={ingot_gold=1, ingot=1, gold=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:goldblock", {groups={block_gold=1, gold=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_gold", {groups={ore_gold=1, gold=1}})
 			visionLib.Common.SmartOverrideItem("default:gold_lump", {groups={ore_gold=1, lump_gold=1,gold=1}})
-			minetest.register_alias("vision_lib:gold_ingot", "default:gold_ingot")
-			minetest.register_alias("vision_lib:gold_block", "default:goldblock")
+			minetest.register_alias_force("vision_lib:gold_ingot", "default:gold_ingot")
+			minetest.register_alias_force("vision_lib:gold_block", "default:goldblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:gold_dust", {groups={dust_gold=1,gold=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:gold_dust", "technic:gold_dust")
+				minetest.register_alias_force("vision_lib:gold_dust", "technic:gold_dust")
 			end
-		else
-			visionLib.Material.create("gold", "Gold", "soft", "ffd90050")
 		end
 	end,
 	["bronze"]=function()
+		visionLib.Material.create("bronze", "Bronze", "hard", "ff990055")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:bronze_ingot", {groups={ingot_bronze=1, ingot=1, bronze=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:bronzeblock", {groups={block_bronze=1, bronze=1, metal_block=1}})
-			minetest.register_alias("vision_lib:bronze_ingot", "default:bronze_ingot")
-			minetest.register_alias("vision_lib:bronze_block", "default:bronzeblock")
+			minetest.register_alias_force("vision_lib:bronze_ingot", "default:bronze_ingot")
+			minetest.register_alias_force("vision_lib:bronze_block", "default:bronzeblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:bronze_dust", {groups={dust_bronze=1,bronze=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:bronze_dust", "technic:bronze_dust")
+				minetest.register_alias_force("vision_lib:bronze_dust", "technic:bronze_dust")
 			end
-		else
-			visionLib.Material.create("bronze", "Bronze", "hard", "ff990055")
 		end
 	end,
 	["diamond"]=function()
@@ -115,7 +110,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("default:stone_with_coal", {groups={ore_coal=1, diamond=1}})
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:coal_dust", {groups={dust_coal=1,coal=1,dust=1}})
-				minetest.register_alias("vision_lib:coal_dust", "technic:coal_dust")
+				minetest.register_alias_force("vision_lib:coal_dust", "technic:coal_dust")
 			end
 		end
 	end,
@@ -194,139 +189,130 @@ visionLib._sMaterials={
 	end,
 	["mithril"]=function()
 		if minetest.get_modpath("moreores") then
+			visionLib.Material.create("mithril", "Mithril", "hard", "0203f8a0")
 			visionLib.Common.SmartOverrideItem("moreores:mithril_ingot", {groups={ingot_mithril=1, ingot=1, mithril=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mithril_block", {groups={block_mithril=1, mithril=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mineral_mithril", {groups={ore_mithril=1, mithril=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mithril_lump", {groups={ore_mithril=1, lump_mithril=1,mithril=1}})
-			minetest.register_alias("vision_lib:mithril_ingot", "moreores:mithril_ingot")
-			minetest.register_alias("vision_lib:mithril_block", "moreores:mithril_block")
+			minetest.register_alias_force("vision_lib:mithril_ingot", "moreores:mithril_ingot")
+			minetest.register_alias_force("vision_lib:mithril_block", "moreores:mithril_block")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:mithril_dust", {groups={dust_mithril=1,mithril=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:mithril_dust", "technic:mithril_dust")
+				minetest.register_alias_force("vision_lib:mithril_dust", "technic:mithril_dust")
 			end
-		else
-			visionLib.Material.create("mithril", "Mithril", "hard", "0203f8a0")
 		end
 	end,
 	["silver"]=function()
+		visionLib.Material.create("silver", "Silver", "hard", "0000ff20")
 		if minetest.get_modpath("moreores") then
 			visionLib.Common.SmartOverrideItem("moreores:silver_ingot", {groups={ingot_silver=1, ingot=1, silver=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("moreores:silver_block", {groups={block_silver=1, silver=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mineral_silver", {groups={ore_silver=1, silver=1}})
 			visionLib.Common.SmartOverrideItem("moreores:silver_lump", {groups={ore_silver=1, lump_silver=1,silver=1}})
-			minetest.register_alias("vision_lib:silver_ingot", "moreores:silver_ingot")
-			minetest.register_alias("vision_lib:silver_block", "moreores:silver_block")
+			minetest.register_alias_force("vision_lib:silver_ingot", "moreores:silver_ingot")
+			minetest.register_alias_force("vision_lib:silver_block", "moreores:silver_block")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:silver_dust", {groups={dust_silver=1,silver=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:silver_dust", "technic:silver_dust")
+				minetest.register_alias_force("vision_lib:silver_dust", "technic:silver_dust")
 			end
-		else
-			visionLib.Material.create("silver", "Silver", "hard", "0000ff20")
 		end
 	end,
 	["brass"]=function()
+		visionLib.Material.create("brass", "Brass", "hard", "ffd90033")
 		if minetest.get_modpath("basic_materials") then
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_ingot", {groups={ingot_brass=1, ingot=1, brass=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_block", {groups={block_brass=1, brass=1, metal_block=1}})
-			minetest.register_alias("vision_lib:brass_ingot", "basic_materials:brass_ingot")
-			minetest.register_alias("vision_lib:brass_block", "basic_materials:brass_block")
+			minetest.register_alias_force("vision_lib:brass_ingot", "basic_materials:brass_ingot")
+			minetest.register_alias_force("vision_lib:brass_block", "basic_materials:brass_block")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:brass_dust", {groups={dust_brass=1,brass=1,dust=1, metal=1}})
-				minetest.register_alias("vision_lib:brass_dust", "technic:brass_dust")
+				minetest.register_alias_force("vision_lib:brass_dust", "technic:brass_dust")
 			end
-		else
-			visionLib.Material.create("brass", "Brass", "hard", "ffd90033")
 		end
 	end,
 	["carbon_steel"]=function()
+		visionLib.Material.create("carbon_steel", "Carbon Steel", "hard", "0001f933")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_ingot", {groups={ingot_carbon_steel=1, ingot=1, carbon_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_block", {groups={block_carbon_steel=1, carbon_steel=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_dust", {groups={dust_carbon_steel=1, dust=1, carbon_steel=1, metal=1}})
-			minetest.register_alias("vision_lib:carbon_steel_ingot", "technic:carbon_steel_ingot")
-			minetest.register_alias("vision_lib:carbon_steel_block", "technic:carbon_steel_block")
-			minetest.register_alias("vision_lib:carbon_steel_dust", "technic:carbon_steel_dust")
-		else
-			visionLib.Material.create("carbon_steel", "Carbon Steel", "hard", "0001f933")
+			minetest.register_alias_force("vision_lib:carbon_steel_ingot", "technic:carbon_steel_ingot")
+			minetest.register_alias_force("vision_lib:carbon_steel_block", "technic:carbon_steel_block")
+			minetest.register_alias_force("vision_lib:carbon_steel_dust", "technic:carbon_steel_dust")
 		end
 	end,
 	["cast_iron"]=function()
+		visionLib.Material.create("cast_iron", "Cast Iron", "hard", "0000a035")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_ingot", {groups={ingot_cast_iron=1, ingot=1, cast_iron=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_block", {groups={block_cast_iron=1, cast_iron=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_dust", {groups={dust_cast_iron=1, dust=1, cast_iron=1, metal=1}})
-			minetest.register_alias("vision_lib:cast_iron_ingot", "technic:cst_iron_ingot")
-			minetest.register_alias("vision_lib:cast_iron_block", "technic:cast_iron_block")
-			minetest.register_alias("vision_lib:cast_iron_dust", "technic:cast_iron_dust")
-		else
-			visionLib.Material.create("cast_iron", "Cast Iron", "hard", "0000a035")
+			minetest.register_alias_force("vision_lib:cast_iron_ingot", "technic:cst_iron_ingot")
+			minetest.register_alias_force("vision_lib:cast_iron_block", "technic:cast_iron_block")
+			minetest.register_alias_force("vision_lib:cast_iron_dust", "technic:cast_iron_dust")
 		end
 	end,
 	["chromium"]=function()
+		visionLib.Material.create("chromium", "Chromium", "hard", "0203f815")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:chromium_ingot", {groups={ingot_chromium=1, ingot=1, chromium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:chromium_block", {groups={block_chromium=1, chromium=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:chromium_dust", {groups={dust_chromium=1, dust=1, chromium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_chromium", {groups={ore_chromium=1, chromium=1}})
 			visionLib.Common.SmartOverrideItem("technic:chromium_lump", {groups={ore_chromium=1, lump_chromium=1,chromium=1}})
-			minetest.register_alias("vision_lib:chromium_ingot", "technic:chromium_ingot")
-			minetest.register_alias("vision_lib:chromium_block", "technic:chromium_block")
-			minetest.register_alias("vision_lib:chromium_dust", "technic:chromium_dust")
-		else
-			visionLib.Material.create("chromium", "Chromium", "hard", "0203f815")
+			minetest.register_alias_force("vision_lib:chromium_ingot", "technic:chromium_ingot")
+			minetest.register_alias_force("vision_lib:chromium_block", "technic:chromium_block")
+			minetest.register_alias_force("vision_lib:chromium_dust", "technic:chromium_dust")
 		end
 	end,
 	["lead"]=function()
+		visionLib.Material.create("lead", "Lead", "soft", "40108063")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:lead_ingot", {groups={ingot_lead=1, ingot=1, lead=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:lead_block", {groups={block_lead=1, lead=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:lead_dust", {groups={dust_lead=1, dust=1, lead=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_lead", {groups={ore_lead=1, lead=1}})
 			visionLib.Common.SmartOverrideItem("technic:lead_lump", {groups={ore_lead=1, lump_lead=1,lead=1}})
-			minetest.register_alias("vision_lib:lead_ingot", "technic:lead_ingot")
-			minetest.register_alias("vision_lib:lead_block", "technic:lead_block")
-			minetest.register_alias("vision_lib:lead_dust", "technic:lead_dust")
-		else
-			visionLib.Material.create("lead", "Lead", "soft", "40108063")
+			minetest.register_alias_force("vision_lib:lead_ingot", "technic:lead_ingot")
+			minetest.register_alias_force("vision_lib:lead_block", "technic:lead_block")
+			minetest.register_alias_force("vision_lib:lead_dust", "technic:lead_dust")
 		end
 	end,
 	["stainless_steel"]=function()
+		visionLib.Material.create("stainless_steel", "Stainless Steel", "hard", "00010320")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_ingot", {groups={ingot_stainless_steel=1, ingot=1, stainless_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_block", {groups={block_stainless_steel=1, stainless_steel=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_dust", {groups={dust_stainless_steel=1, dust=1, stainless_steel=1, metal=1}})
-			minetest.register_alias("vision_lib:stainless_steel_ingot", "technic:stainless_steel_ingot")
-			minetest.register_alias("vision_lib:stainless_steel_block", "technic:stainless_steel_block")
-			minetest.register_alias("vision_lib:stainless_steel_dust", "technic:stainless_steel_dust")
-		else
-			visionLib.Material.create("stainless_steel", "Stainless Steel", "hard", "00010320")
+			minetest.register_alias_force("vision_lib:stainless_steel_ingot", "technic:stainless_steel_ingot")
+			minetest.register_alias_force("vision_lib:stainless_steel_block", "technic:stainless_steel_block")
+			minetest.register_alias_force("vision_lib:stainless_steel_dust", "technic:stainless_steel_dust")
 		end
 	end,
 	["zinc"]=function()
+		visionLib.Material.create("zinc", "Zinc", "hard", "56f6ff60")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:zinc_ingot", {groups={ingot_zinc=1, ingot=1, zinc=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:zinc_block", {groups={block_zinc=1, zinc=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("technic:zinc_dust", {groups={dust_zinc=1, dust=1, zinc=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_zinc", {groups={ore_zinc=1, zinc=1}})
 			visionLib.Common.SmartOverrideItem("technic:zinc_lump", {groups={ore_zinc=1, lump_zinc=1,zinc=1}})
-			minetest.register_alias("vision_lib:zinc_ingot", "technic:zinc_ingot")
-			minetest.register_alias("vision_lib:zinc_block", "technic:zinc_block")
-			minetest.register_alias("vision_lib:zinc_dust", "technic:zinc_dust")
-		else
-			visionLib.Material.create("zinc", "Zinc", "hard", "56f6ff60")
+			minetest.register_alias_force("vision_lib:zinc_ingot", "technic:zinc_ingot")
+			minetest.register_alias_force("vision_lib:zinc_block", "technic:zinc_block")
+			minetest.register_alias_force("vision_lib:zinc_dust", "technic:zinc_dust")
 		end
 	end,
 	["sulfur"]=function()
+		visionLib.Material.create("sulfur", "Sulfur", "powder", "fff200a0")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:sulfur_dust", {groups={dust_sulfur=1, dust=1, sulfur=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_sulfur", {groups={ore_sulfur=1, sulfur=1}})
 			visionLib.Common.SmartOverrideItem("technic:sulfur_lump", {groups={ore_sulfur=1, lump_sulfur=1,sulfur=1}})
-			minetest.register_alias("vision_lib:sulfur_dust", "technic:sulfur_dust")
-		else
-			visionLib.Material.create("sulfur", "Sulfur", "powder", "fff200a0")
+			minetest.register_alias_force("vision_lib:sulfur_dust", "technic:sulfur_dust")
 		end
 	end,
 	["uranium"]=function()
+		visionLib.Material.create("uranium", "Uranium", "strange", "03ff0170")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:uranium_ingot", {groups={ingot_uranium=1, ingot=1, uranium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:uranium_block", {groups={block_uranium=1, uranium=1, metal_block=1}})
@@ -339,11 +325,9 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("technic:uranium35_dust", {groups={dust_uranium=1, dust=1, uranium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_uranium", {groups={ore_uranium=1, uranium=1}})
 			visionLib.Common.SmartOverrideItem("technic:uranium_lump", {groups={ore_uranium=1, lump_uranium=1,uranium=1}})
-			minetest.register_alias("vision_lib:uranium_ingot", "technic:uranium_ingot")
-			minetest.register_alias("vision_lib:uranium_block", "technic:uranium_block")
-			minetest.register_alias("vision_lib:uranium_dust", "technic:uranium_dust")
-		else
-			visionLib.Material.create("uranium", "Uranium", "strange", "03ff0170")
+			minetest.register_alias_force("vision_lib:uranium_ingot", "technic:uranium_ingot")
+			minetest.register_alias_force("vision_lib:uranium_block", "technic:uranium_block")
+			minetest.register_alias_force("vision_lib:uranium_dust", "technic:uranium_dust")
 		end
 	end,
 	["nickel"]=function()
@@ -381,6 +365,12 @@ visionLib._sMaterials={
 	end,
 	["thorium"]=function()
 		visionLib.Material.create("thorium", "Thorium", "strange", "00005090")
+	end,
+	["arsenic"]=function()
+		visionLib.Material.create("arsenic", "Arsenic", "brittle", "fff20023")
+	end,
+	["boron"]=function()
+		visionLib.Material.create("boron", "Boron", "brittle", "86643450")
 	end,
 }
 
@@ -532,7 +522,7 @@ function visionLib.Material.create(name, desc, ish, color)
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_dust", {
-			description = desc.." Filings",
+			description = desc.." Dust",
 			inventory_image = "visionlib_dust.png^[colorize:#"..color,
 			groups={["dust_"..name]=1, [name]=1, dust=1, metal=1},
 		})
