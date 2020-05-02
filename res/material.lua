@@ -20,7 +20,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["copper"]=function()
-		visionLib.Material.create("copper", "Copper", "soft", "ffc60050")
+		visionLib.Material.create("copper", "Copper", "soft", "ffc60090")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:copper_ingot", {groups={ingot_copper=1, ingot=1, copper=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:copperblock", {groups={block_copper=1, copper=1, metal_block=1}})
@@ -67,7 +67,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["bronze"]=function()
-		visionLib.Material.create("bronze", "Bronze", "hard", "ff990055")
+		visionLib.Material.create("bronze", "Bronze", "hard", "ff990095")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:bronze_ingot", {groups={ingot_bronze=1, ingot=1, bronze=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:bronzeblock", {groups={block_bronze=1, bronze=1, metal_block=1}})
@@ -760,7 +760,7 @@ function visionLib.Material.create(name, desc, ish, color)
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_wire", {
-			description = desc.." Filament",
+			description = desc.." Wire",
 			inventory_image = "visionlib_wire.png^[colorize:#"..color,
 			groups={["wire_"..name]=1, [name]=1, wire=1, metal=1},
 		})
