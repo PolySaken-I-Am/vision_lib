@@ -661,6 +661,12 @@ function visionLib.Material.create(name, desc, ish, color)
 			inventory_image = "visionlib_wire.png^[colorize:#"..color,
 			groups={["wire_"..name]=1, [name]=1, wire=1, metal=1},
 		})
+
+		minetest.register_craft({
+			type="shapeless",
+			output="vision_lib:"..name.."_wire 4",
+			recipe={"vision_lib:"..name.."_nugget"}
+		})
 		
 		
 		minetest.register_craft({
@@ -763,6 +769,12 @@ function visionLib.Material.create(name, desc, ish, color)
 			description = desc.." Wire",
 			inventory_image = "visionlib_wire.png^[colorize:#"..color,
 			groups={["wire_"..name]=1, [name]=1, wire=1, metal=1},
+		})
+
+		minetest.register_craft({
+			type="shapeless",
+			output="vision_lib:"..name.."_wire 4",
+			recipe={"vision_lib:"..name.."_nugget"}
 		})
 
 		minetest.register_node(":vision_lib:"..name.."_block", {
