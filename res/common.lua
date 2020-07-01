@@ -19,3 +19,14 @@ function visionLib.Common.SmartOverrideItem(name,redef)
 		minetest.register_craftitem(":"..name, redef)
 	end
 end
+
+function visionLib.Common.GetAdjacents(p)
+	return {
+		["y"]={x=p.x,y=p.y+1,z=p.z},
+		["Y"]={x=p.x,y=p.y-1,z=p.z},
+		["x"]={x=p.x+1,y=p.y,z=p.z},
+		["X"]={x=p.x-1,y=p.y,z=p.z},
+		["z"]={x=p.x,y=p.y,z=p.z+1},
+		["Z"]={x=p.x,y=p.y,z=p.z-1}
+	}
+end

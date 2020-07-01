@@ -31,7 +31,7 @@ visionLib={modPath=minetest.get_modpath("vision_lib"), worldpath=minetest.get_wo
 		end,
 		
 		Len=function(T)
-			n=0
+			local n=0
 			for k,v in pairs(T) do
 			n=n+1
 			end
@@ -51,3 +51,4 @@ visionLib.File.LoadModule("common")
 visionLib.File.LoadModule("sound")
 visionLib.File.LoadModule("material")
 visionLib.File.LoadModule("schem")
+visionLib.File.LoadModule("ctm")
