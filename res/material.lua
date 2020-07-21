@@ -330,6 +330,9 @@ visionLib._sMaterials={
 			minetest.register_alias_force("vision_lib:uranium_dust", "technic:uranium_dust")
 		end
 	end,
+	["steel"]=function()
+		visionLib.Material.create("steel", "Steel", "hard", "a0a0a070")
+	end,
 	["nickel"]=function()
 		visionLib.Material.create("nickel", "Nickel", "hard", "c6c78fa0")
 	end,
@@ -371,6 +374,18 @@ visionLib._sMaterials={
 	end,
 	["boron"]=function()
 		visionLib.Material.create("boron", "Boron", "brittle", "86643450")
+	end,
+	["adamantine"]=function()
+		visionLib.Material.create("adamantine", "Adamantine", "hard", "ff000080")
+	end,
+	["orichalcum"]=function()
+		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "00802080")
+	end,
+	["blood_steel"]=function()
+		visionLib.Material.create("blood_steel", "Haemic Steel", "hard", "89000080")
+	end,
+	["serouin"]=function()
+		visionLib.Material.create("serouin", "Serouin Alloy", "hard", "89890080")
 	end,
 }
 
