@@ -36,7 +36,7 @@ visionLib={modPath=minetest.get_modpath("vision_lib"), worldpath=minetest.get_wo
 			n=n+1
 			end
 			return n
-		end
+		end,
 	},
 	File={},
 }

@@ -80,27 +80,37 @@ visionLib._sMaterials={
 		end
 	end,
 	["diamond"]=function()
+		visionLib.Material.create("diamond", "Diamond", "fragile", "9999ffd0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:diamond", {groups={gem_diamond=1, gem=1, diamond=1}})
 			visionLib.Common.SmartOverrideItem("default:diamondblock", {groups={block_diamond=1, diamond=1, gem_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_diamond", {groups={ore_diamond=1, diamond=1}})
+			minetest.register_alias_force("vision_lib:diamond_gem", "default:diamond")
+			minetest.register_alias_force("vision_lib:diamond_block", "default:diamondblock")
 		end
 	end,
 	["mese"]=function()
+		visionLib.Material.create("mese", "Mese", "fragile", "ffff00e0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:mese_crystal", {groups={gem_mese=1, gem=1, mese=1}})
 			visionLib.Common.SmartOverrideItem("default:mese_crystal_fragment", {groups={shard_mese=1, shard=1, mese=1}})
 			visionLib.Common.SmartOverrideItem("default:mese", {groups={block_mese=1, mese=1, gem_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_mese", {groups={ore_mese=1, mese=1}})
+			minetest.register_alias_force("vision_lib:mese_gem", "default:mese_crystal")
+			minetest.register_alias_force("vision_lib:mese_shard", "default:mese_crystal_fragment")
+			minetest.register_alias_force("vision_lib:mese_block", "default:mese")
 		end
 	end,
 	["obsidian"]=function()
+		visionLib.Material.create("obsidian", "Obsidian", "fragile", "200020e0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:obsidian_shard", {groups={shard_obsidian=1, shard=1, obsidian=1}})
 			visionLib.Common.SmartOverrideItem("default:obsidian", {groups={block_obsidian=1, obsidian=1, gem_block=1}})
 			visionLib.Common.SmartOverrideItem("default:obsidianbrick", {groups={block_obsidian=1, obsidian=1, gem_block=1}})
 			visionLib.Common.SmartOverrideItem("default:obsidian_block", {groups={block_obsidian=1, obsidian=1, gem_block=1}})
 			visionLib.Common.SmartOverrideItem("default:obsidian_glass", {groups={block_obsidian=1, obsidian=1, gem_block=1}})
+			minetest.register_alias_force("vision_lib:obsidian_gem", "default:obsidian")
+			minetest.register_alias_force("vision_lib:obsidian_shard", "default:obsidian_shard")
 		end
 	end,
 	["coal"]=function()
@@ -379,13 +389,40 @@ visionLib._sMaterials={
 		visionLib.Material.create("adamantine", "Adamantine", "hard", "ff000080")
 	end,
 	["orichalcum"]=function()
-		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "00802080")
+		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "20684080")
 	end,
 	["blood_steel"]=function()
 		visionLib.Material.create("blood_steel", "Haemic Steel", "hard", "89000080")
 	end,
 	["serouin"]=function()
 		visionLib.Material.create("serouin", "Serouin Alloy", "hard", "89890080")
+	end,
+	["emerald"]=function()
+		visionLib.Material.create("emerald", "Emerald", "fragile", "00ff60c0")
+	end,
+	["jasper"]=function()
+		visionLib.Material.create("jasper", "Jasper", "fragile", "882510a0")
+	end,
+	["opal"]=function()
+		visionLib.Material.create("opal", "Opal", "fragile", "00a0f0a0")
+	end,
+	["ruby"]=function()
+		visionLib.Material.create("ruby", "Ruby", "fragile", "a00000c0")
+	end,
+	["garnet"]=function()
+		visionLib.Material.create("garnet", "Garnet", "fragile", "600000c0")
+	end,
+	["sapphire"]=function()
+		visionLib.Material.create("sapphire", "Sapphire", "fragile", "0000b0a0")
+	end,
+	["jade"]=function()
+		visionLib.Material.create("jade", "Jade", "fragile", "208050c0")
+	end,
+	["topaz"]=function()
+		visionLib.Material.create("topaz", "Topaz", "fragile", "fa7000a0")
+	end,
+	["amethyst"]=function()
+		visionLib.Material.create("amethyst", "Amethyst", "fragile", "7010dba0")
 	end,
 }
 
@@ -415,8 +452,14 @@ minetest.after(0, visionLib.Material.generate)
 function visionLib.Material.create(name, desc, ish, color)
 	if ish=="fragile" then
 		minetest.register_craftitem(":vision_lib:"..name.."_gem", {
-			description = desc.." Crystal",
-			inventory_image = "visionlib_gem.png^[colorize:#"..color,
+			description = desc.." ",
+			inventory_image = "(visionlib_gem.png^[colorize:#"..color..")^visionlib_gemshine.png",
+			groups={["gem_"..name]=1, [name]=1, gem=1},
+		})
+
+		minetest.register_craftitem(":vision_lib:"..name.."_gem2", {
+			description = "Polished "..desc,
+			inventory_image = "(visionlib_gem2.png^[colorize:#"..color..")^visionlib_gemshine.png",
 			groups={["gem_"..name]=1, [name]=1, gem=1},
 		})
 		
