@@ -47,6 +47,7 @@ function visionLib.File.LoadModule(filename, fp)
 	dofile(filepath.."/res/"..filename)
 end
 
+visionLib.File.LoadModule("file")
 visionLib.File.LoadModule("common")
 visionLib.File.LoadModule("sound")
 visionLib.File.LoadModule("material")

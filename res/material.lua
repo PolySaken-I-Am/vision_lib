@@ -5,13 +5,15 @@ visionLib.Materials={}
 
 visionLib._sMaterials={
 	["iron"]=function()
-		visionLib.Material.create("iron", "Wrought Iron", "hard", "b0b0b0a0")
+		visionLib.Material.create("iron", "Iron", "hard", "b0b0b0a0")
 		if minetest.get_modpath("default") then
-			visionLib.Common.SmartOverrideItem("default:steel_ingot", {description="Wrought Iron Ingot", groups={ingot_iron=1, ingot=1, iron=1, metal=1}})
-			visionLib.Common.SmartOverrideItem("default:steelblock", {description="Wrought Iron Block", groups={block_iron=1, iron=1, metal_block=1}})
+			visionLib.Common.SmartOverrideItem("default:steel_ingot", {description="Iron Ingot", groups={ingot_iron=1, ingot=1, iron=1, metal=1}})
+			visionLib.Common.SmartOverrideItem("default:steelblock", {description="Iron Block", groups={block_iron=1, iron=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("default:stone_with_iron", {groups={ore_iron=1, iron=1}})
 			visionLib.Common.SmartOverrideItem("default:iron_lump", {groups={ore_iron=1, lump_iron=1, iron=1}})
 			minetest.register_alias_force("vision_lib:iron_ingot", "default:steel_ingot")
+			minetest.register_alias_force("vision_lib:iron_lump", "default:iron_lump")
+			minetest.register_alias_force("default:iron_ingot", "default:steel_ingot")
 			minetest.register_alias_force("vision_lib:iron_block", "default:steelblock")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:wrought_iron_dust", {groups={dust_iron=1,iron=1,dust=1, metal=1}})
@@ -20,7 +22,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["copper"]=function()
-		visionLib.Material.create("copper", "Copper", "soft", "ffc60090")
+		visionLib.Material.create("copper", "Copper", "soft", "ff7000a0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:copper_ingot", {groups={ingot_copper=1, ingot=1, copper=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:copperblock", {groups={block_copper=1, copper=1, metal_block=1}})
@@ -28,6 +30,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("default:copper_lump", {groups={ore_copper=1, lump_copper=1,copper=1}})
 			minetest.register_alias_force("vision_lib:copper_ingot", "default:copper_ingot")
 			minetest.register_alias_force("vision_lib:copper_block", "default:copperblock")
+			minetest.register_alias_force("vision_lib:copper_lump", "default:copper_lump")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:copper_dust", {groups={dust_copper=1,copper=1,dust=1, metal=1}})
 				visionLib.Common.SmartOverrideItem("technic:copper_plate", {groups={plate_copper=1,copper=1,plate=1, metal=1}})
@@ -45,6 +48,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("default:tin_lump", {groups={ore_tin=1, lump_tin=1,tin=1}})
 			minetest.register_alias_force("vision_lib:tin_ingot", "default:tin_ingot")
 			minetest.register_alias_force("vision_lib:tin_block", "default:tinblock")
+			minetest.register_alias_force("vision_lib:tin_lump", "default:tin_lump")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:tin_dust", {groups={dust_tin=1,tin=1,dust=1, metal=1}})
 				minetest.register_alias_force("vision_lib:tin_dust", "technic:tin_dust")
@@ -60,6 +64,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("default:gold_lump", {groups={ore_gold=1, lump_gold=1,gold=1}})
 			minetest.register_alias_force("vision_lib:gold_ingot", "default:gold_ingot")
 			minetest.register_alias_force("vision_lib:gold_block", "default:goldblock")
+			minetest.register_alias_force("vision_lib:gold_lump", "default:gold_lump")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:gold_dust", {groups={dust_gold=1,gold=1,dust=1, metal=1}})
 				minetest.register_alias_force("vision_lib:gold_dust", "technic:gold_dust")
@@ -67,7 +72,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["bronze"]=function()
-		visionLib.Material.create("bronze", "Bronze", "hard", "ff990095")
+		visionLib.Material.create("bronze", "Bronze", "hard", "ff990095", true)
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:bronze_ingot", {groups={ingot_bronze=1, ingot=1, bronze=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:bronzeblock", {groups={block_bronze=1, bronze=1, metal_block=1}})
@@ -117,7 +122,7 @@ visionLib._sMaterials={
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:coal_lump", {groups={gem_coal=1, gem=1, coal=1}})
 			visionLib.Common.SmartOverrideItem("default:coalblock", {groups={block_coal=1, coal=1, gem_block=1}})
-			visionLib.Common.SmartOverrideItem("default:stone_with_coal", {groups={ore_coal=1, diamond=1}})
+			visionLib.Common.SmartOverrideItem("default:stone_with_coal", {groups={ore_coal=1, coal=1}})
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:coal_dust", {groups={dust_coal=1,coal=1,dust=1}})
 				minetest.register_alias_force("vision_lib:coal_dust", "technic:coal_dust")
@@ -145,7 +150,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:lumigold_rod", {groups={rod_lumigold=1, rod=1, lumigold=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_lumigold", {groups={dust_lumigold=1, dust=1, lumigold=1, metal=1}})
 		else
-			visionLib.Material.create("lumigold", "Lumigold", "hard", "e6e18aa0")
+			visionLib.Material.create("lumigold", "Lumigold", "hard", "e6e18aa0", true)
 		end
 	end,
 	["hekatonium"]=function()
@@ -164,7 +169,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:angmallen_block", {groups={block_angmallen=1, angmallen=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_angmallen", {groups={dust_angmallen=1, dust=1, angmallen=1, metal=1}})
 		else
-			visionLib.Material.create("angmallen", "Angmallen", "hard", "ec9600a0")
+			visionLib.Material.create("angmallen", "Angmallen", "hard", "ec9600a0", true)
 		end
 	end,
 	["silicotin"]=function()
@@ -174,7 +179,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:plate_silicotin", {groups={plate_silicotin=1, plate=1, silicotin=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_silicotin", {groups={dust_silicotin=1, dust=1, silicotin=1, metal=1}})
 		else
-			visionLib.Material.create("silicotin", "Silicotin", "hard", "262c76d4")
+			visionLib.Material.create("silicotin", "Silicotin", "hard", "262c76d4", true)
 		end		
 	end,
 	["zweinium"]=function()
@@ -184,7 +189,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:zweinium_ore", {groups={ore_zweinium=1, zweinium=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_zweinium", {groups={dust_zweinium=1, dust=1, zweinium=1}})
 		else
-			visionLib.Material.create("zweinium", "Zweinium", "fragile", "00ff7190")
+			visionLib.Material.create("zweinium", "Zweinium", "fragile", "00ff7190", true)
 		end
 	end,
 	["shimmering"]=function()
@@ -194,7 +199,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:plate_shimmering", {groups={plate_shimmering=1, plate=1, shimmering=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_shimmering", {groups={dust_shimmering=1, dust=1, shimmering=1, metal=1}})
 		else
-			visionLib.Material.create("shimmering", "Shimmering", "hard", "ffffffa0")
+			visionLib.Material.create("shimmering", "Shimmering", "hard", "ffffffa0", true)
 		end
 	end,
 	["mithril"]=function()
@@ -206,6 +211,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("moreores:mithril_lump", {groups={ore_mithril=1, lump_mithril=1,mithril=1}})
 			minetest.register_alias_force("vision_lib:mithril_ingot", "moreores:mithril_ingot")
 			minetest.register_alias_force("vision_lib:mithril_block", "moreores:mithril_block")
+			minetest.register_alias_force("vision_lib:mithril_lump", "moreores:mithril_lump")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:mithril_dust", {groups={dust_mithril=1,mithril=1,dust=1, metal=1}})
 				minetest.register_alias_force("vision_lib:mithril_dust", "technic:mithril_dust")
@@ -221,6 +227,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("moreores:silver_lump", {groups={ore_silver=1, lump_silver=1,silver=1}})
 			minetest.register_alias_force("vision_lib:silver_ingot", "moreores:silver_ingot")
 			minetest.register_alias_force("vision_lib:silver_block", "moreores:silver_block")
+			minetest.register_alias_force("vision_lib:silver_lump", "moreores:silver_lump")
 			if minetest.get_modpath("technic") then
 				visionLib.Common.SmartOverrideItem("technic:silver_dust", {groups={dust_silver=1,silver=1,dust=1, metal=1}})
 				minetest.register_alias_force("vision_lib:silver_dust", "technic:silver_dust")
@@ -228,7 +235,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["brass"]=function()
-		visionLib.Material.create("brass", "Brass", "hard", "ffd90033")
+		visionLib.Material.create("brass", "Brass", "hard", "ffd90033", true)
 		if minetest.get_modpath("basic_materials") then
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_ingot", {groups={ingot_brass=1, ingot=1, brass=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_block", {groups={block_brass=1, brass=1, metal_block=1}})
@@ -241,7 +248,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["carbon_steel"]=function()
-		visionLib.Material.create("carbon_steel", "Carbon Steel", "hard", "0001f933")
+		visionLib.Material.create("carbon_steel", "Carbon Steel", "hard", "0001f933", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_ingot", {groups={ingot_carbon_steel=1, ingot=1, carbon_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_block", {groups={block_carbon_steel=1, carbon_steel=1, metal_block=1}})
@@ -252,7 +259,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["cast_iron"]=function()
-		visionLib.Material.create("cast_iron", "Cast Iron", "hard", "0000a035")
+		visionLib.Material.create("cast_iron", "Cast Iron", "hard", "0000a035", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_ingot", {groups={ingot_cast_iron=1, ingot=1, cast_iron=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_block", {groups={block_cast_iron=1, cast_iron=1, metal_block=1}})
@@ -273,6 +280,7 @@ visionLib._sMaterials={
 			minetest.register_alias_force("vision_lib:chromium_ingot", "technic:chromium_ingot")
 			minetest.register_alias_force("vision_lib:chromium_block", "technic:chromium_block")
 			minetest.register_alias_force("vision_lib:chromium_dust", "technic:chromium_dust")
+			minetest.register_alias_force("vision_lib:chromium_lump", "technic:chromium_lump")
 		end
 	end,
 	["lead"]=function()
@@ -286,10 +294,11 @@ visionLib._sMaterials={
 			minetest.register_alias_force("vision_lib:lead_ingot", "technic:lead_ingot")
 			minetest.register_alias_force("vision_lib:lead_block", "technic:lead_block")
 			minetest.register_alias_force("vision_lib:lead_dust", "technic:lead_dust")
+			minetest.register_alias_force("vision_lib:lead_lump", "technic:lead_lump")
 		end
 	end,
 	["stainless_steel"]=function()
-		visionLib.Material.create("stainless_steel", "Stainless Steel", "hard", "00010320")
+		visionLib.Material.create("stainless_steel", "Stainless Steel", "hard", "00010320", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_ingot", {groups={ingot_stainless_steel=1, ingot=1, stainless_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_block", {groups={block_stainless_steel=1, stainless_steel=1, metal_block=1}})
@@ -310,6 +319,7 @@ visionLib._sMaterials={
 			minetest.register_alias_force("vision_lib:zinc_ingot", "technic:zinc_ingot")
 			minetest.register_alias_force("vision_lib:zinc_block", "technic:zinc_block")
 			minetest.register_alias_force("vision_lib:zinc_dust", "technic:zinc_dust")
+			minetest.register_alias_force("vision_lib:zinc_lump", "technic:zinc_lump")
 		end
 	end,
 	["sulfur"]=function()
@@ -338,10 +348,11 @@ visionLib._sMaterials={
 			minetest.register_alias_force("vision_lib:uranium_ingot", "technic:uranium_ingot")
 			minetest.register_alias_force("vision_lib:uranium_block", "technic:uranium_block")
 			minetest.register_alias_force("vision_lib:uranium_dust", "technic:uranium_dust")
+			minetest.register_alias_force("vision_lib:uranium_lump", "technic:uranium_lump")
 		end
 	end,
 	["steel"]=function()
-		visionLib.Material.create("steel", "Steel", "hard", "a0a0a070")
+		visionLib.Material.create("steel", "Steel", "hard", "a0a0a070", true)
 	end,
 	["nickel"]=function()
 		visionLib.Material.create("nickel", "Nickel", "hard", "c6c78fa0")
@@ -374,7 +385,7 @@ visionLib._sMaterials={
 		visionLib.Material.create("tungsten", "Tungsten", "brittle", "0f0f0f90")
 	end,
 	["kenthess"]=function()
-		visionLib.Material.create("kenthess", "Kenthess", "hard", "000020a0")
+		visionLib.Material.create("kenthess", "Kenthess", "hard", "000020a0", true)
 	end,
 	["thorium"]=function()
 		visionLib.Material.create("thorium", "Thorium", "strange", "00005090")
@@ -389,13 +400,13 @@ visionLib._sMaterials={
 		visionLib.Material.create("adamantine", "Adamantine", "hard", "ff000080")
 	end,
 	["orichalcum"]=function()
-		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "20684080")
+		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "20684080", true)
 	end,
 	["blood_steel"]=function()
-		visionLib.Material.create("blood_steel", "Haemic Steel", "hard", "89000080")
+		visionLib.Material.create("blood_steel", "Haemic Steel", "hard", "89000080", true)
 	end,
 	["serouin"]=function()
-		visionLib.Material.create("serouin", "Serouin Alloy", "hard", "89890080")
+		visionLib.Material.create("serouin", "Serouin Alloy", "hard", "89890080", true)
 	end,
 	["emerald"]=function()
 		visionLib.Material.create("emerald", "Emerald", "fragile", "00ff60c0")
@@ -430,6 +441,11 @@ visionLib.Material.using={}
 
 function visionLib.Material.require(r)
 	for k,v in pairs(r) do
+		if v=="all" then 
+			for _,vv in pairs(visionLib._sMaterials) do
+				visionLib.Material.using[_]=true
+			end
+		end
 		if visionLib._sMaterials[v] then
 			visionLib.Material.using[v]=true
 		end
@@ -449,7 +465,7 @@ end
 
 minetest.after(0, visionLib.Material.generate)
 
-function visionLib.Material.create(name, desc, ish, color)
+function visionLib.Material.create(name, desc, ish, color, alloy)
 	if ish=="fragile" then
 		minetest.register_craftitem(":vision_lib:"..name.."_gem", {
 			description = desc.." ",
@@ -459,7 +475,7 @@ function visionLib.Material.create(name, desc, ish, color)
 
 		minetest.register_craftitem(":vision_lib:"..name.."_gem2", {
 			description = "Polished "..desc,
-			inventory_image = "(visionlib_gem2.png^[colorize:#"..color..")^visionlib_gemshine.png",
+			inventory_image = "(visionlib_gem2.png^[colorize:#"..color..")^visionlib_gemshine2.png",
 			groups={["gem_"..name]=1, [name]=1, gem=1},
 		})
 		
@@ -573,6 +589,20 @@ function visionLib.Material.create(name, desc, ish, color)
 			groups={["ingot_"..name]=1, [name]=1, ingot=1, metal=1},
 		})
 		
+		if not alloy then
+		minetest.register_craftitem(":vision_lib:"..name.."_lump", {
+			description = desc.." Lump",
+			inventory_image = "visionlib_lump.png^[colorize:#"..color,
+			groups={["lump_"..name]=1, [name]=1, lump=1, metal=1},
+		})
+		
+		minetest.register_craft({
+			type="cooking",
+			output="vision_lib:"..name.."_ingot",
+			recipe="vision_lib:"..name.."_lump"
+		})
+		end
+		
 		minetest.register_craftitem(":vision_lib:"..name.."_nugget", {
 			description = desc.." Chip",
 			inventory_image = "visionlib_nugget.png^[colorize:#"..color,
@@ -668,6 +698,21 @@ function visionLib.Material.create(name, desc, ish, color)
 			groups={["ingot_"..name]=1, [name]=1, ingot=1, metal=1},
 		})
 		
+		if not alloy then
+		minetest.register_craftitem(":vision_lib:"..name.."_lump", {
+			description = desc.." Lump",
+			inventory_image = "visionlib_lump.png^[colorize:#"..color,
+			groups={["lump_"..name]=1, [name]=1, lump=1, metal=1},
+		})
+		
+		minetest.register_craft({
+			type="cooking",
+			output="vision_lib:"..name.."_ingot",
+			recipe="vision_lib:"..name.."_lump"
+		})
+		
+		end
+		
 		minetest.register_craftitem(":vision_lib:"..name.."_nugget", {
 			description = desc.." Chip",
 			inventory_image = "visionlib_nugget.png^[colorize:#"..color,
@@ -758,6 +803,13 @@ function visionLib.Material.create(name, desc, ish, color)
 		})
 		
 		minetest.register_craft({
+			output="vision_lib:"..name.."_plate 3",
+			recipe={
+				{"vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot"}
+			}
+		})
+		
+		minetest.register_craft({
 			output="vision_lib:"..name.."_gear",
 			recipe={
 				{"", "vision_lib:"..name.."_ingot", ""},
@@ -796,6 +848,21 @@ function visionLib.Material.create(name, desc, ish, color)
 			inventory_image = "visionlib_ingot.png^[colorize:#"..color,
 			groups={["ingot_"..name]=1, [name]=1, ingot=1, metal=1},
 		})
+		
+		if not alloy then
+		minetest.register_craftitem(":vision_lib:"..name.."_lump", {
+			description = desc.." Lump",
+			inventory_image = "visionlib_lump.png^[colorize:#"..color,
+			groups={["lump_"..name]=1, [name]=1, lump=1, metal=1},
+		})
+		
+		minetest.register_craft({
+			type="cooking",
+			output="vision_lib:"..name.."_ingot",
+			recipe="vision_lib:"..name.."_lump"
+		})
+		
+		end
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_nugget", {
 			description = desc.." Chunk",
@@ -873,6 +940,13 @@ function visionLib.Material.create(name, desc, ish, color)
 				{"vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot"}
 			}
 		})
+		
+		minetest.register_craft({
+			output="vision_lib:"..name.."_sheet 6",
+			recipe={
+				{"vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot", "vision_lib:"..name.."_ingot"}
+			}
+		})
 
 		minetest.register_craft({
 			type="shapeless",
@@ -894,6 +968,21 @@ function visionLib.Material.create(name, desc, ish, color)
 			inventory_image = "visionlib_ingot.png^[colorize:#"..color,
 			groups={["ingot_"..name]=1, [name]=1, ingot=1, metal=1},
 		})
+		
+		if not alloy then
+		minetest.register_craftitem(":vision_lib:"..name.."_lump", {
+			description = desc.." Lump",
+			inventory_image = "visionlib_lump.png^[colorize:#"..color,
+			groups={["lump_"..name]=1, [name]=1, lump=1, metal=1},
+		})
+		
+		minetest.register_craft({
+			type="cooking",
+			output="vision_lib:"..name.."_ingot",
+			recipe="vision_lib:"..name.."_lump"
+		})
+		
+		end
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_nugget", {
 			description = desc.." Chip",
