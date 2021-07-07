@@ -147,11 +147,11 @@ This function returns a table of all connected nodes that are supplied in `accep
 ### Sound Library
 The `visionLib.Sound` table contains SoundSpec constructors for vision lib's built in sounds. This lis is constantly being expanded, and will ideally include sounds for every basic node material.
 
-`visionLib.Sound.Metal()`: Metallic sounds for things like metal railing, grates, etc.
-`visionLib.Sound.Glass()`: More realistic glass sounds for windows, crystals, etc.
-`visionLib.Sound.Sand()`: Sounds suitable for any powedered material.
-`visionLib.Sound.Plastic()`: Sounds for things like plastic drums, furniture, etc.
-`visionLib.Sound.Slime()`: Sounds ideal for mud & slime.
+ - `visionLib.Sound.Metal()`: Metallic sounds for things like metal railing, grates, etc.
+ - `visionLib.Sound.Glass()`: More realistic glass sounds for windows, crystals, etc.
+ - `visionLib.Sound.Sand()`: Sounds suitable for any powedered material.
+ - `visionLib.Sound.Plastic()`: Sounds for things like plastic drums, furniture, etc.
+ - `visionLib.Sound.Slime()`: Sounds ideal for mud & slime.
 
 ## Licensing
 vision_lib (c) by PolySaken
