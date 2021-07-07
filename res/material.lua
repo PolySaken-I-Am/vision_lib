@@ -463,6 +463,10 @@ function visionLib.Material.generate()
 	end
 end
 
+function visionLib.Material.register(name, defunc)
+	visionLib._sMaterials[name]=defunc	
+end
+
 minetest.after(0, visionLib.Material.generate)
 
 function visionLib.Material.create(name, desc, ish, color, alloy)
