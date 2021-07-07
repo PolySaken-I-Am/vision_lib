@@ -5,12 +5,12 @@ visionLib={modPath=minetest.get_modpath("vision_lib"), worldpath=minetest.get_wo
 			if N then
 				for k,v in pairs(T) do
 					if not N[k] then
-						t[k]=v
+						t[k] = type(v) == 'table' and visionLib.Table.Clone(v) or v
 					end
 				end
 			else
 				for k,v in pairs(T) do
-					t[k]=v
+					t[k] = type(v) == 'table' and visionLib.Table.Clone(v) or v
 				end
 			end
 			return t
