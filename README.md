@@ -127,7 +127,7 @@ Registers all the required item types of a material based on the supplied values
 `is_not_ore`, if true, will disable the registry of raw material forms.
 
 `visionLib.Material.register(name, defunc)`
-Defines a new material with technical name `name`. `defunc` is a function which handles the creation of items for the material; in its most basic form is consists of this code:
+Defines a new material with technical name `name`. `defunc` is a function which handles the creation of items for the material; in its most basic form it consists of this code:
 ```
 visionLib.Material.register('materialname', function()
   visionLib.Material.create("materialname", "Material Name", "hard", "ffffffd0")
