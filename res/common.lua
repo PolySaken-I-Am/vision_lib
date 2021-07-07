@@ -162,7 +162,7 @@ visionLib.Common.Capitals={
 function visionLib.Common.ParagraphFormat(t)
 	local k=""
 	if visionLib.Common.Capitals[t:sub(1,1)] then
-		k=t:sub(2,#t)
+		k="\t"..t:sub(2,#t)
 		k=visionLib.Common.Capitals[t:sub(1,1)]..k
 	else
 		k=t
