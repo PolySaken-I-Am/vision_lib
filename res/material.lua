@@ -361,7 +361,7 @@ visionLib._sMaterials={
 		visionLib.Material.create("osmium", "Osmium", "hard", "0002f080")
 	end,
 	["aluminium"]=function()
-		visionLib.Material.create("aluminium", "Aluminium", "soft", "d1d4d070")
+		visionLib.Material.create("aluminium", "Aluminium", "hard", "d1d4d070")
 	end,
 	["platinum"]=function()
 		visionLib.Material.create("platinum", "Platinum", "soft", "00000020")
@@ -380,6 +380,9 @@ visionLib._sMaterials={
 	end,
 	["antimony"]=function()
 		visionLib.Material.create("antimony", "Antimony", "soft", "0f0f0f90")
+	end,
+	["silicon"]=function()
+		visionLib.Material.create("silicon", "Silicon", "soft", "d1d4d070")
 	end,
 	["tungsten"]=function()
 		visionLib.Material.create("tungsten", "Tungsten", "brittle", "0f0f0f90")
@@ -895,7 +898,7 @@ function visionLib.Material.create(name, desc, ish, color, alloy)
 		})
 		
 		minetest.register_craftitem(":vision_lib:"..name.."_wire", {
-			description = desc.." Wire",
+			description = desc.." Cable",
 			inventory_image = "visionlib_wire.png^[colorize:#"..color,
 			groups={["wire_"..name]=1, [name]=1, wire=1, metal=1},
 		})
