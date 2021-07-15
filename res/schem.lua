@@ -33,14 +33,14 @@ function visionLib.Schem.GetConnected(pos, acceptable, extra, cull_nx, ignore_ou
 			if first then
 				first = false
 				
-				if not (ignore_out == '+x') then process(v.x+1, v.y,v.z, v) end
-				if not (ignore_out == '-x') then process(v.x-1, v.y,v.z, v) end
+				if not (ignore_out == 'x') then process(v.x+1, v.y,v.z, v) end
+				if not (ignore_out == 'X') then process(v.x-1, v.y,v.z, v) end
 
-				if not (ignore_out == '+z') then process(v.x, v.y,v.z+1, v) end
-				if not (ignore_out == '-z') then process(v.x, v.y,v.z-1, v) end
+				if not (ignore_out == 'z') then process(v.x, v.y,v.z+1, v) end
+				if not (ignore_out == 'Z') then process(v.x, v.y,v.z-1, v) end
 
-				if not (ignore_out == '+y') then process(v.x, v.y+1,v.z, v) end
-				if not (ignore_out == '-y') then process(v.x, v.y-1,v.z, v) end
+				if not (ignore_out == 'y') then process(v.x, v.y+1,v.z, v) end
+				if not (ignore_out == 'Y') then process(v.x, v.y-1,v.z, v) end
 			else
 				process(v.x+1, v.y,v.z, v)
 				process(v.x-1, v.y,v.z, v)

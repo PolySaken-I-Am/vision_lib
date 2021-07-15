@@ -20,15 +20,23 @@ Return a boolean value from checking whether a certain value exists in a table.
 `visionLib.Table.Len(table)` 
 Return the full length of a table irrespective of whether fields are named or numbered.
 
+`visionLib.Table.Merge(table_1, table_2)` 
+Return the result of merging `table_1` and `table_2`, with `table_2`'s keys taking priority.
+
+
 ---
 ### Common Utilities 
 The `visionLib.Common` table contains generic utility functions and constants.
 
 #### Constants:
 `visionLib.Common.HexDigits`: An ordered list of strings representing the allowed characters in a hexadecimal string. 
+
 `visionLib.Common.vowels`: A list containing strings representing latin vowel _letters_ (does not include multicharacter vowels).
+
 `visionLib.Common.consonants`: A list containing possible consonant sounds in the latin alphabet (may be incomplete).
+
 `visionLib.Common.syllableStructs`: A list containing certain syllable structures which are guaranteed to be pronounceable.
+
 `visionLib.Common.Capitals`: A key-value list representing the relationship between lowercase letters and capitals.
 
 #### Global Vars
@@ -101,10 +109,15 @@ Update the CTM manager at position `pos`. Required for any CTM handlers to take 
 Contains functions for managing files.
 
 `visionLib.File.Exists(filename)` Returns true if the file `filename` exists.
+
 `visionLib.File.Create(filename)` Create an empty file `filename`.
+
 `visionLib.File.Write(filename, text)` Replace the content of filename `filename` with `text`.
+
 `visionLib.File.Add(filename, text)` Append `text` to the file `filename`.
+
 `visionLib.File.Read(filename)` Returns the contents of `filename`.
+
 `visionLib.File.MkDir(dirname)` Create a folder named `dirname`.
 
 ---
@@ -140,8 +153,9 @@ _Note: materials are registered once all mods are finished loading. If you need 
 ---
 ### Schematic Tools
 The table `visionLib.Schem` contains a single function:
-`visionLib.Schem.GetConnected(pos, acceptable)`
-This function returns a table of all connected nodes that are supplied in `acceptable`. 
+
+`visionLib.Schem.GetConnected(pos, acceptable, [extra, extra_only])`
+This function returns a table of all connected nodes findable from `pos` that are supplied in `acceptable`. Optionally includes any nodes in `extra`, but nodes in this table are not considered 'connections' and so will end a search branch even if there are other acceptable nodes after it. If `extra_only` is true, the result will only include nodes in `extra`.
 
 ---
 ### Sound Library
