@@ -90,7 +90,7 @@ Register a new CTM handler for the nodename `node`. Each node may have one CTM h
 `{result="modname:nodename", keys={"x", "X", "z", "Z", ...}}` 
 Where `node` will be replaced with `result` if there is an affector in each key position. Keys represent locations relative to the main node, with the same key format as `visionLib.Common.GetAdjacents`.
 An example handler:
-```
+```lua
 visionLib.CTM.NewCtmHandler("default:glass",
 {
 	["default:tree"]=1,
@@ -122,7 +122,7 @@ Contains functions for managing files.
 
 ---
 ### Material System
-The table `visionLib.Material` contains functions for standardised item materials, independednt of the current game. 
+The table `visionLib.Material` contains functions for standardised item materials, independent of the current game. 
 
 `visionLib.Material.Require(materials)`
 Marks the specified materials as needed, causing them to be generated at load time. Non-required materials do not exist. 
@@ -135,20 +135,40 @@ Reloads the definitions of all materials.
 Registers all the required item types of a material based on the supplied values.
 `name` is the technical name of the material.
 `display_name` is used in item descriptions.
-`hardness` is one of the following: 'fragile', 'powder', 'brittle', 'hard', 'soft', or 'strange'.
+`hardness` is a mechanical properties class.*
 `color` is the base color used by the texture generator.
 `is_not_ore`, if true, will disable the registry of raw material forms.
 
+\*a mechanical properties class is one of the following:
+
+ - 'hard' 
+   A metal like steel or titanium
+ - 'soft'
+   A substance like plastic or rubber, or a soft metal like lead
+ - 'brittle'
+   A substance like graphite or chalk
+ - 'fragile'
+   A glass-like mineral such as diamond and other crystals
+ - 'powder'
+   Something so brittle it can only be a powder
+ - 'strange'
+   A hard material that cannot be made into certain items due to reasons other than hardness (like radioactivity)
+ - 'stonelike'
+   As the name implies, a material such as stone or ceramic
+
 `visionLib.Material.Register(name, defunc)`
 Defines a new material with technical name `name`. `defunc` is a function which handles the creation of items for the material; in its most basic form it consists of this code:
-```
+```lua
 visionLib.Material.Register('materialname', function()
   visionLib.Material.Create("materialname", "Material Name", "hard", "ffffffd0")
-end
+end)
 ```
 However it should also handle any cross-mod compatibility. Refer to `res/material.lua` for examples.
 
 _Note: materials are registered once all mods are finished loading. If you need to register materials during play, run `visionLib.Material.Generate()` afterward._
+
+`visionLib.Material.CreateVariants(nodename, [add_recipes])`
+Registers carved variants of a node. Requires simple tiles, uses first tile only. If `add_recipes` is true, default style recipes will be created for each node.
 
 ---
 ### Schematic Tools
@@ -167,6 +187,24 @@ The `visionLib.Sound` table contains SoundSpec constructors for vision lib's bui
  - `visionLib.Sound.Plastic()`: Sounds for things like plastic drums, furniture, etc.
  - `visionLib.Sound.Slime()`: Sounds ideal for mud & slime.
 
+---
+### Cross-Mod Compatibility
+Vision Lib supports cross-mod compatibility with quite a few mods.
+
+#### Default
+ - Material system interfacing for all metals & minerals
+ - Automatic variants for many building blocks
+ 
+#### MoreOres
+ - Material system interfacing for Mithril & Silver
+ 
+#### Technic
+ - Material system interfacing for many metals and minerals
+ 
+#### Basic Materials
+ - Material sytstem interfacing for brass
+ 
+ 
 ## Licensing
 vision_lib (c) by PolySaken
 
