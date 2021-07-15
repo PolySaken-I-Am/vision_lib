@@ -40,7 +40,7 @@ function visionLib.Common.DecreasingRarity(m)
 	return t
 end
 
-visionLib.Common.HexDigits={
+visionLib.Common.hexDigits={
 	"0", "1", "2", "3", 
 	"4", "5", "6", "7", 
 	"8", "9", "A", "B",
@@ -50,7 +50,7 @@ visionLib.Common.HexDigits={
 function visionLib.Common.RandomHex(l, d)
 	local t=""
 	for i=1,l do
-		t=t..visionLib.Common.HexDigits[math.random(1,d or 16)]
+		t=t..visionLib.Common.hexDigits[math.random(1,d or 16)]
 	end
 	return t
 end
@@ -119,7 +119,7 @@ function visionLib.Common.TitleFormat(t)
 	return T
 end
 
-visionLib.Common.Capitals={
+visionLib.Common.capitals={
 	a="A",
 	b="B",
 	c="C",
@@ -150,9 +150,9 @@ visionLib.Common.Capitals={
 
 function visionLib.Common.ParagraphFormat(t)
 	local k=""
-	if visionLib.Common.Capitals[t:sub(1,1)] then
+	if visionLib.Common.capitals[t:sub(1,1)] then
 		k="\t"..t:sub(2,#t)
-		k=visionLib.Common.Capitals[t:sub(1,1)]..k
+		k=visionLib.Common.capitals[t:sub(1,1)]..k
 	else
 		k=t
 	end

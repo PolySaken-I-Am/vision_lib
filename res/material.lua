@@ -5,7 +5,7 @@ visionLib.Materials={}
 
 visionLib._sMaterials={
 	["iron"]=function()
-		visionLib.Material.create("iron", "Iron", "hard", "b0b0b0a0")
+		visionLib.Material.Create("iron", "Iron", "hard", "b0b0b0a0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:steel_ingot", {description="Iron Ingot", groups={ingot_iron=1, ingot=1, iron=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:steelblock", {description="Iron Block", groups={block_iron=1, iron=1, metal_block=1}})
@@ -22,7 +22,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["copper"]=function()
-		visionLib.Material.create("copper", "Copper", "soft", "ff7000a0")
+		visionLib.Material.Create("copper", "Copper", "soft", "d9680fa0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:copper_ingot", {groups={ingot_copper=1, ingot=1, copper=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:copperblock", {groups={block_copper=1, copper=1, metal_block=1}})
@@ -40,7 +40,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["tin"]=function()
-		visionLib.Material.create("tin", "Tin", "hard", "b0b0b850")
+		visionLib.Material.Create("tin", "Tin", "hard", "b0b0b850")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:tin_ingot", {groups={ingot_tin=1, ingot=1, tin=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:tinblock", {groups={block_tin=1, tin=1, metal_block=1}})
@@ -56,7 +56,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["gold"]=function()
-		visionLib.Material.create("gold", "Gold", "soft", "ffd90050")
+		visionLib.Material.Create("gold", "Gold", "soft", "ffd90050")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:gold_ingot", {groups={ingot_gold=1, ingot=1, gold=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:goldblock", {groups={block_gold=1, gold=1, metal_block=1}})
@@ -72,7 +72,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["bronze"]=function()
-		visionLib.Material.create("bronze", "Bronze", "hard", "ff990095", true)
+		visionLib.Material.Create("bronze", "Bronze", "hard", "ff990095", true)
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:bronze_ingot", {groups={ingot_bronze=1, ingot=1, bronze=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("default:bronzeblock", {groups={block_bronze=1, bronze=1, metal_block=1}})
@@ -85,7 +85,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["diamond"]=function()
-		visionLib.Material.create("diamond", "Diamond", "fragile", "9999ffd0")
+		visionLib.Material.Create("diamond", "Diamond", "fragile", "9999ffd0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:diamond", {groups={gem_diamond=1, gem=1, diamond=1}})
 			visionLib.Common.SmartOverrideItem("default:diamondblock", {groups={block_diamond=1, diamond=1, gem_block=1}})
@@ -95,7 +95,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["mese"]=function()
-		visionLib.Material.create("mese", "Mese", "fragile", "ffff00e0")
+		visionLib.Material.Create("mese", "Mese", "fragile", "ffff00e0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:mese_crystal", {groups={gem_mese=1, gem=1, mese=1}})
 			visionLib.Common.SmartOverrideItem("default:mese_crystal_fragment", {groups={shard_mese=1, shard=1, mese=1}})
@@ -107,7 +107,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["obsidian"]=function()
-		visionLib.Material.create("obsidian", "Obsidian", "fragile", "200020e0")
+		visionLib.Material.Create("obsidian", "Obsidian", "fragile", "200020e0")
 		if minetest.get_modpath("default") then
 			visionLib.Common.SmartOverrideItem("default:obsidian_shard", {groups={shard_obsidian=1, shard=1, obsidian=1}})
 			visionLib.Common.SmartOverrideItem("default:obsidian", {groups={block_obsidian=1, obsidian=1, gem_block=1}})
@@ -139,7 +139,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:luminium_lump", {groups={ore_luminium=1, lump_luminium=1,luminium=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:luminium_chip", {groups={nugget_luminium=1, nugget=1, luminium=1}})
 		else
-			visionLib.Material.create("luminium", "Luminium", "hard", "76abffa0")
+			visionLib.Material.Create("luminium", "Luminium", "hard", "76abffa0")
 		end
 	end,
 	["lumigold"]=function()
@@ -150,7 +150,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:lumigold_rod", {groups={rod_lumigold=1, rod=1, lumigold=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_lumigold", {groups={dust_lumigold=1, dust=1, lumigold=1, metal=1}})
 		else
-			visionLib.Material.create("lumigold", "Lumigold", "hard", "e6e18aa0", true)
+			visionLib.Material.Create("lumigold", "Lumigold", "hard", "e6e18aa0", true)
 		end
 	end,
 	["hekatonium"]=function()
@@ -160,7 +160,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:hekatonium_ore", {groups={ore_hekatonium=1, hekatonium=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:hekatonium_chunk", {groups={ore_hekatonium=1, lump_hekatonium=1,hekatonium=1}})
 		else
-			visionLib.Material.create("hekatonium", "hekatonium", "hard", "3a00a7c0")
+			visionLib.Material.Create("hekatonium", "hekatonium", "hard", "3a00a7c0")
 		end
 	end,
 	["angmallen"]=function()
@@ -169,7 +169,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:angmallen_block", {groups={block_angmallen=1, angmallen=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_angmallen", {groups={dust_angmallen=1, dust=1, angmallen=1, metal=1}})
 		else
-			visionLib.Material.create("angmallen", "Angmallen", "hard", "ec9600a0", true)
+			visionLib.Material.Create("angmallen", "Angmallen", "hard", "ec9600a0", true)
 		end
 	end,
 	["silicotin"]=function()
@@ -179,7 +179,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:plate_silicotin", {groups={plate_silicotin=1, plate=1, silicotin=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_silicotin", {groups={dust_silicotin=1, dust=1, silicotin=1, metal=1}})
 		else
-			visionLib.Material.create("silicotin", "Silicotin", "hard", "262c76d4", true)
+			visionLib.Material.Create("silicotin", "Silicotin", "hard", "262c76d4", true)
 		end		
 	end,
 	["zweinium"]=function()
@@ -189,7 +189,7 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:zweinium_ore", {groups={ore_zweinium=1, zweinium=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_zweinium", {groups={dust_zweinium=1, dust=1, zweinium=1}})
 		else
-			visionLib.Material.create("zweinium", "Zweinium", "fragile", "00ff7190", true)
+			visionLib.Material.Create("zweinium", "Zweinium", "fragile", "00ff7190", true)
 		end
 	end,
 	["shimmering"]=function()
@@ -199,12 +199,12 @@ visionLib._sMaterials={
 			visionLib.Common.SmartOverrideItem("ocular_networks:plate_shimmering", {groups={plate_shimmering=1, plate=1, shimmering=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("ocular_networks:dust_shimmering", {groups={dust_shimmering=1, dust=1, shimmering=1, metal=1}})
 		else
-			visionLib.Material.create("shimmering", "Shimmering", "hard", "ffffffa0", true)
+			visionLib.Material.Create("shimmering", "Shimmering", "hard", "ffffffa0", true)
 		end
 	end,
 	["mithril"]=function()
 		if minetest.get_modpath("moreores") then
-			visionLib.Material.create("mithril", "Mithril", "hard", "0203f8a0")
+			visionLib.Material.Create("mithril", "Mithril", "hard", "0203f8a0")
 			visionLib.Common.SmartOverrideItem("moreores:mithril_ingot", {groups={ingot_mithril=1, ingot=1, mithril=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mithril_block", {groups={block_mithril=1, mithril=1, metal_block=1}})
 			visionLib.Common.SmartOverrideItem("moreores:mineral_mithril", {groups={ore_mithril=1, mithril=1}})
@@ -219,7 +219,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["silver"]=function()
-		visionLib.Material.create("silver", "Silver", "hard", "0000ff20")
+		visionLib.Material.Create("silver", "Silver", "hard", "0000ff20")
 		if minetest.get_modpath("moreores") then
 			visionLib.Common.SmartOverrideItem("moreores:silver_ingot", {groups={ingot_silver=1, ingot=1, silver=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("moreores:silver_block", {groups={block_silver=1, silver=1, metal_block=1}})
@@ -235,7 +235,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["brass"]=function()
-		visionLib.Material.create("brass", "Brass", "hard", "ffd90033", true)
+		visionLib.Material.Create("brass", "Brass", "hard", "ffd90033", true)
 		if minetest.get_modpath("basic_materials") then
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_ingot", {groups={ingot_brass=1, ingot=1, brass=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("basic_materials:brass_block", {groups={block_brass=1, brass=1, metal_block=1}})
@@ -248,7 +248,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["carbon_steel"]=function()
-		visionLib.Material.create("carbon_steel", "Carbon Steel", "hard", "0001f933", true)
+		visionLib.Material.Create("carbon_steel", "Carbon Steel", "hard", "0001f933", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_ingot", {groups={ingot_carbon_steel=1, ingot=1, carbon_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:carbon_steel_block", {groups={block_carbon_steel=1, carbon_steel=1, metal_block=1}})
@@ -259,7 +259,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["cast_iron"]=function()
-		visionLib.Material.create("cast_iron", "Cast Iron", "hard", "0000a035", true)
+		visionLib.Material.Create("cast_iron", "Cast Iron", "hard", "0000a035", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_ingot", {groups={ingot_cast_iron=1, ingot=1, cast_iron=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:cast_iron_block", {groups={block_cast_iron=1, cast_iron=1, metal_block=1}})
@@ -270,7 +270,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["chromium"]=function()
-		visionLib.Material.create("chromium", "Chromium", "hard", "0203f815")
+		visionLib.Material.Create("chromium", "Chromium", "hard", "0203f815")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:chromium_ingot", {groups={ingot_chromium=1, ingot=1, chromium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:chromium_block", {groups={block_chromium=1, chromium=1, metal_block=1}})
@@ -284,7 +284,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["lead"]=function()
-		visionLib.Material.create("lead", "Lead", "soft", "40108063")
+		visionLib.Material.Create("lead", "Lead", "soft", "40108063")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:lead_ingot", {groups={ingot_lead=1, ingot=1, lead=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:lead_block", {groups={block_lead=1, lead=1, metal_block=1}})
@@ -298,7 +298,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["stainless_steel"]=function()
-		visionLib.Material.create("stainless_steel", "Stainless Steel", "hard", "00010320", true)
+		visionLib.Material.Create("stainless_steel", "Stainless Steel", "hard", "00010320", true)
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_ingot", {groups={ingot_stainless_steel=1, ingot=1, stainless_steel=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:stainless_steel_block", {groups={block_stainless_steel=1, stainless_steel=1, metal_block=1}})
@@ -309,7 +309,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["zinc"]=function()
-		visionLib.Material.create("zinc", "Zinc", "hard", "56f6ff60")
+		visionLib.Material.Create("zinc", "Zinc", "hard", "56f6ff60")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:zinc_ingot", {groups={ingot_zinc=1, ingot=1, zinc=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:zinc_block", {groups={block_zinc=1, zinc=1, metal_block=1}})
@@ -323,7 +323,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["sulfur"]=function()
-		visionLib.Material.create("sulfur", "Sulfur", "powder", "fff200a0")
+		visionLib.Material.Create("sulfur", "Sulfur", "powder", "fff200a0")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:sulfur_dust", {groups={dust_sulfur=1, dust=1, sulfur=1}})
 			visionLib.Common.SmartOverrideItem("technic:mineral_sulfur", {groups={ore_sulfur=1, sulfur=1}})
@@ -332,7 +332,7 @@ visionLib._sMaterials={
 		end
 	end,
 	["uranium"]=function()
-		visionLib.Material.create("uranium", "Uranium", "strange", "03ff0170")
+		visionLib.Material.Create("uranium", "Uranium", "strange", "03ff0170")
 		if minetest.get_modpath("technic") then
 			visionLib.Common.SmartOverrideItem("technic:uranium_ingot", {groups={ingot_uranium=1, ingot=1, uranium=1, metal=1}})
 			visionLib.Common.SmartOverrideItem("technic:uranium_block", {groups={block_uranium=1, uranium=1, metal_block=1}})
@@ -352,97 +352,97 @@ visionLib._sMaterials={
 		end
 	end,
 	["steel"]=function()
-		visionLib.Material.create("steel", "Steel", "hard", "a0a0a070", true)
+		visionLib.Material.Create("steel", "Steel", "hard", "a0a0a070", true)
 	end,
 	["nickel"]=function()
-		visionLib.Material.create("nickel", "Nickel", "hard", "c6c78fa0")
+		visionLib.Material.Create("nickel", "Nickel", "hard", "c6c78fa0")
 	end,
 	["osmium"]=function()
-		visionLib.Material.create("osmium", "Osmium", "hard", "0002f080")
+		visionLib.Material.Create("osmium", "Osmium", "hard", "0002f080")
 	end,
 	["aluminium"]=function()
-		visionLib.Material.create("aluminium", "Aluminium", "hard", "d1d4d070")
+		visionLib.Material.Create("aluminium", "Aluminium", "hard", "d1d4d070")
 	end,
 	["platinum"]=function()
-		visionLib.Material.create("platinum", "Platinum", "soft", "00000020")
+		visionLib.Material.Create("platinum", "Platinum", "soft", "00000020")
 	end,
 	["titanium"]=function()
-		visionLib.Material.create("titanium", "Titanium", "hard", "00000000")
+		visionLib.Material.Create("titanium", "Titanium", "hard", "00000000")
 	end,
 	["tantalum"]=function()
-		visionLib.Material.create("tantalum", "Tantalum", "hard", "000023b0")
+		visionLib.Material.Create("tantalum", "Tantalum", "hard", "000023b0")
 	end,
 	["neodymium"]=function()
-		visionLib.Material.create("neodymium", "Neodymium", "brittle", "ecffa290")
+		visionLib.Material.Create("neodymium", "Neodymium", "brittle", "ecffa290")
 	end,
 	["cobalt"]=function()
-		visionLib.Material.create("cobalt", "Cobalt", "hard", "00059080")
+		visionLib.Material.Create("cobalt", "Cobalt", "hard", "00059080")
 	end,
 	["antimony"]=function()
-		visionLib.Material.create("antimony", "Antimony", "soft", "0f0f0f90")
+		visionLib.Material.Create("antimony", "Antimony", "soft", "0f0f0f90")
 	end,
 	["silicon"]=function()
-		visionLib.Material.create("silicon", "Silicon", "soft", "d1d4d070")
+		visionLib.Material.Create("silicon", "Silicon", "soft", "d1d4d070")
 	end,
 	["tungsten"]=function()
-		visionLib.Material.create("tungsten", "Tungsten", "brittle", "0f0f0f90")
+		visionLib.Material.Create("tungsten", "Tungsten", "brittle", "0f0f0f90")
 	end,
 	["kenthess"]=function()
-		visionLib.Material.create("kenthess", "Kenthess", "hard", "000020a0", true)
+		visionLib.Material.Create("kenthess", "Kenthess", "hard", "000020a0", true)
 	end,
 	["thorium"]=function()
-		visionLib.Material.create("thorium", "Thorium", "strange", "00005090")
+		visionLib.Material.Create("thorium", "Thorium", "strange", "00005090")
 	end,
 	["arsenic"]=function()
-		visionLib.Material.create("arsenic", "Arsenic", "brittle", "fff20023")
+		visionLib.Material.Create("arsenic", "Arsenic", "brittle", "fff20023")
 	end,
 	["boron"]=function()
-		visionLib.Material.create("boron", "Boron", "brittle", "86643450")
+		visionLib.Material.Create("boron", "Boron", "brittle", "86643450")
 	end,
 	["adamantine"]=function()
-		visionLib.Material.create("adamantine", "Adamantine", "hard", "ff000080")
+		visionLib.Material.Create("adamantine", "Adamantine", "hard", "ff000080")
 	end,
 	["orichalcum"]=function()
-		visionLib.Material.create("orichalcum", "Orichalkos", "hard", "20684080", true)
+		visionLib.Material.Create("orichalcum", "Orichalkos", "hard", "20684080", true)
 	end,
 	["blood_steel"]=function()
-		visionLib.Material.create("blood_steel", "Haemic Steel", "hard", "89000080", true)
+		visionLib.Material.Create("blood_steel", "Haemic Steel", "hard", "89000080", true)
 	end,
 	["serouin"]=function()
-		visionLib.Material.create("serouin", "Serouin Alloy", "hard", "89890080", true)
+		visionLib.Material.Create("serouin", "Serouin Alloy", "hard", "89890080", true)
 	end,
 	["emerald"]=function()
-		visionLib.Material.create("emerald", "Emerald", "fragile", "00ff60c0")
+		visionLib.Material.Create("emerald", "Emerald", "fragile", "23af44c0")
 	end,
 	["jasper"]=function()
-		visionLib.Material.create("jasper", "Jasper", "fragile", "882510a0")
+		visionLib.Material.Create("jasper", "Jasper", "fragile", "882510a0")
 	end,
 	["opal"]=function()
-		visionLib.Material.create("opal", "Opal", "fragile", "00a0f0a0")
+		visionLib.Material.Create("opal", "Opal", "fragile", "00a0f0a0")
 	end,
 	["ruby"]=function()
-		visionLib.Material.create("ruby", "Ruby", "fragile", "a00000c0")
+		visionLib.Material.Create("ruby", "Ruby", "fragile", "a00000c0")
 	end,
 	["garnet"]=function()
-		visionLib.Material.create("garnet", "Garnet", "fragile", "600000c0")
+		visionLib.Material.Create("garnet", "Garnet", "fragile", "600000c0")
 	end,
 	["sapphire"]=function()
-		visionLib.Material.create("sapphire", "Sapphire", "fragile", "0000b0a0")
+		visionLib.Material.Create("sapphire", "Sapphire", "fragile", "0000b0a0")
 	end,
 	["jade"]=function()
-		visionLib.Material.create("jade", "Jade", "fragile", "208050c0")
+		visionLib.Material.Create("jade", "Jade", "fragile", "0b8628c0")
 	end,
 	["topaz"]=function()
-		visionLib.Material.create("topaz", "Topaz", "fragile", "fa7000a0")
+		visionLib.Material.Create("topaz", "Topaz", "fragile", "fa7000a0")
 	end,
 	["amethyst"]=function()
-		visionLib.Material.create("amethyst", "Amethyst", "fragile", "7010dba0")
+		visionLib.Material.Create("amethyst", "Amethyst", "fragile", "7010dba0")
 	end,
 }
 
 visionLib.Material.using={}
 
-function visionLib.Material.require(r)
+function visionLib.Material.Require(r)
 	for k,v in pairs(r) do
 		if v=="all" then 
 			for _,vv in pairs(visionLib._sMaterials) do
@@ -455,7 +455,7 @@ function visionLib.Material.require(r)
 	end
 end
 
-function visionLib.Material.generate()
+function visionLib.Material.Generate()
 	for k,v in pairs(visionLib.Material.using) do
 		visionLib.Materials[k]={}
 		if visionLib._sMaterials[k] then
@@ -466,13 +466,13 @@ function visionLib.Material.generate()
 	end
 end
 
-function visionLib.Material.register(name, defunc)
+function visionLib.Material.Register(name, defunc)
 	visionLib._sMaterials[name]=defunc	
 end
 
-minetest.after(0, visionLib.Material.generate)
+minetest.after(0, visionLib.Material.Generate)
 
-function visionLib.Material.create(name, desc, ish, color, alloy)
+function visionLib.Material.Create(name, desc, ish, color, alloy)
 	if ish=="fragile" then
 		minetest.register_craftitem(":vision_lib:"..name.."_gem", {
 			description = desc.." ",
@@ -1084,14 +1084,14 @@ function visionLib.Material.create(name, desc, ish, color, alloy)
 end
 
 if minetest.get_modpath("default") then
-visionLib.Material.require({"iron", "copper", "tin", "gold", "bronze", "diamond", "mese", "obsidian", "coal"})
+visionLib.Material.Require({"iron", "copper", "tin", "gold", "bronze", "diamond", "mese", "obsidian", "coal"})
 end
 if minetest.get_modpath("moreores") then
-visionLib.Material.require({"mithril", "silver"})
+visionLib.Material.Require({"mithril", "silver"})
 end
 if minetest.get_modpath("technic") then
-visionLib.Material.require({"carbon_steel", "cast_iron", "chromium", "lead", "stainless_steel", "zinc", "sulfur", "uranium"})
+visionLib.Material.Require({"carbon_steel", "cast_iron", "chromium", "lead", "stainless_steel", "zinc", "sulfur", "uranium"})
 end
 if minetest.get_modpath("basic_materials") then
-visionLib.Material.require({"brass"})
+visionLib.Material.Require({"brass"})
 end

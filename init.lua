@@ -39,9 +39,9 @@ visionLib={modPath=minetest.get_modpath("vision_lib"), worldpath=minetest.get_wo
 		end,
 		
 		Merge=function(t1, t2, merge_subtables)
-			local r = Clone(t1)
+			local r = visionLib.Table.Clone(t1)
 		  	for k, v in pairs(t2) do
-					r[k] = (type(v)=='table' and Clone(v) or v)
+					r[k] = (type(v)=='table' and visionLib.Table.Clone(v) or v)
 		 		end
 			return r
 		end

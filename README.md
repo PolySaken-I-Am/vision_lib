@@ -29,7 +29,7 @@ Return the result of merging `table_1` and `table_2`, with `table_2`'s keys taki
 The `visionLib.Common` table contains generic utility functions and constants.
 
 #### Constants:
-`visionLib.Common.HexDigits`: An ordered list of strings representing the allowed characters in a hexadecimal string. 
+`visionLib.Common.hexDigits`: An ordered list of strings representing the allowed characters in a hexadecimal string. 
 
 `visionLib.Common.vowels`: A list containing strings representing latin vowel _letters_ (does not include multicharacter vowels).
 
@@ -37,7 +37,7 @@ The `visionLib.Common` table contains generic utility functions and constants.
 
 `visionLib.Common.syllableStructs`: A list containing certain syllable structures which are guaranteed to be pronounceable.
 
-`visionLib.Common.Capitals`: A key-value list representing the relationship between lowercase letters and capitals.
+`visionLib.Common.capitals`: A key-value list representing the relationship between lowercase letters and capitals.
 
 #### Global Vars
 `visionLib.Common.usedWords`: A list of all previously-generated words recieved from the word generator tool.
@@ -124,14 +124,14 @@ Contains functions for managing files.
 ### Material System
 The table `visionLib.Material` contains functions for standardised item materials, independednt of the current game. 
 
-`visionLib.Material.require(materials)`
+`visionLib.Material.Require(materials)`
 Marks the specified materials as needed, causing them to be generated at load time. Non-required materials do not exist. 
 `material` must be a table of material names, which can be any registered material or `all`, in which case all materials will be generated.
 
-`visionLib.Material.generate()`
+`visionLib.Material.Generate()`
 Reloads the definitions of all materials.
 
-`visionLib.Material.create(name, display_name, hardness, color, [is_not_ore])`
+`visionLib.Material.Create(name, display_name, hardness, color, [is_not_ore])`
 Registers all the required item types of a material based on the supplied values.
 `name` is the technical name of the material.
 `display_name` is used in item descriptions.
@@ -139,16 +139,16 @@ Registers all the required item types of a material based on the supplied values
 `color` is the base color used by the texture generator.
 `is_not_ore`, if true, will disable the registry of raw material forms.
 
-`visionLib.Material.register(name, defunc)`
+`visionLib.Material.Register(name, defunc)`
 Defines a new material with technical name `name`. `defunc` is a function which handles the creation of items for the material; in its most basic form it consists of this code:
 ```
-visionLib.Material.register('materialname', function()
-  visionLib.Material.create("materialname", "Material Name", "hard", "ffffffd0")
+visionLib.Material.Register('materialname', function()
+  visionLib.Material.Create("materialname", "Material Name", "hard", "ffffffd0")
 end
 ```
 However it should also handle any cross-mod compatibility. Refer to `res/material.lua` for examples.
 
-_Note: materials are registered once all mods are finished loading. If you need to register materials during play, run `visionLib.Material.generate()` afterward._
+_Note: materials are registered once all mods are finished loading. If you need to register materials during play, run `visionLib.Material.Generate()` afterward._
 
 ---
 ### Schematic Tools
@@ -159,7 +159,7 @@ This function returns a table of all connected nodes findable from `pos` that ar
 
 ---
 ### Sound Library
-The `visionLib.Sound` table contains SoundSpec constructors for vision lib's built in sounds. This lis is constantly being expanded, and will ideally include sounds for every basic node material.
+The `visionLib.Sound` table contains SoundSpec constructors for vision lib's built in sounds. This list is constantly being expanded, and will ideally include sounds for every basic node material.
 
  - `visionLib.Sound.Metal()`: Metallic sounds for things like metal railing, grates, etc.
  - `visionLib.Sound.Glass()`: More realistic glass sounds for windows, crystals, etc.
