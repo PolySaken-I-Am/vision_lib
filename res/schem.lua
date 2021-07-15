@@ -17,7 +17,7 @@ function visionLib.Schem.GetConnected(pos, acceptable, extra, cull_nx, ignore_ou
 				con=con+1
 				pos.previous_pos = visionLib.Table.Clone(read_from)
 				if not cull_nx then res[pos.x.." "..pos.y.." "..pos.z]=visionLib.Table.Clone(pos) end
-			elseif extra[minetest.get_node(pos).name] then
+			elseif extra and extra[minetest.get_node(pos).name] then
 				stc[pos.x.." "..pos.y.." "..pos.z]=visionLib.Table.Clone(pos)
 				pos.previous_pos = visionLib.Table.Clone(read_from)
 				res[pos.x.." "..pos.y.." "..pos.z]=visionLib.Table.Clone(pos)
